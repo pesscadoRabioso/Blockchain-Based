@@ -9,15 +9,15 @@ class Block
     @nonce, @hash = compute_hash_with_POW
   end
 
-  def compute_hash_with_POW (difficulty = '00') #difficulty = probability = 16^n where n = dificulty level 
-    nonce = 0
+  def compute_hash_with_POW (difficulty = '00') # difficulty = probability = 16^n where n = dificulty level number of digits 
+    nonce = 0 # to create different hashes
     loop do 
       hash = Digest::SHA256.hexdigest("#{nonce}#{data}")
       if hash.start_with?(difficulty)
         return [nonce,hash]
       else
         nonce +=1
-        puts "Searching, it isn't #{hash}, We tried #{nonce} times!"
+        puts "Searching, key isn't #{hash}, We tried #{nonce} times!"
       end
     end
   end
