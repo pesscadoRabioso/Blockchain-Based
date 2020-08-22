@@ -10,7 +10,7 @@ class Block
   end
 
   def compute_hash_with_POW (difficulty = '00') # difficulty = probability = 16^n where n = dificulty level number of digits 
-    nonce = 0 # to create different hashes
+    nonce = 0 # "lucky hash"
     loop do 
       hash = Digest::SHA256.hexdigest("#{nonce}#{data}")
       if hash.start_with?(difficulty)
@@ -23,4 +23,4 @@ class Block
   end
 end
 
-pp Block.new('Test!')
+pp a = Block.new('Test!')
