@@ -1,2 +1,2 @@
 # Blockchain-Based
-simple repository to test blockchain concepts
+simple repository to test concepts based on blockchain;
